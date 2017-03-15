@@ -13,11 +13,8 @@ str(titanic_original)
 titanic_draft <- titanic_original
 str(titanic_draft)
 
-#convert the embarked variable from numeric to character
-titanic_draft$embarked <- as.character(titanic_draft$embarked)
-str(titanic_draft)
-
 # 1 - Port of embarkation:  filling in missing values with "S" for South Hampton
+titanic_draft$embarked <- as.character(titanic_draft$embarked)
 titanic_draft$embarked <- ifelse(!titanic_draft$embarked %in% c("C","S","Q"), "S", titanic_draft$embarked)
 
 
